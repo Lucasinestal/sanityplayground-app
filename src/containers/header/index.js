@@ -5,7 +5,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   headerContainer: {
-    position: "relative",
+    background: "black",
   },
 }));
 
@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className={classes.headerContainer}>
-      <NavBar />
+      <NavBar className={classes.headerContainer} />
     </div>
   );
 }

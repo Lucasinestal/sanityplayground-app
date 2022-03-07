@@ -4,9 +4,6 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   thumbnailWrapper: {},
   thumbnail: {
-    aspecRatio: "1 / 1",
-    objectFit: "contain",
-    height: "100%",
     width: "100%",
   },
 }));

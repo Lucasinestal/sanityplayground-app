@@ -1,6 +1,17 @@
 import React from "react";
 import sanityClient from "../client";
 import ProjectItem from "../containers/ProjectItem";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  projectsWrapper: {
+    marginTop: "80px",
+    width: "100%",
+    display: "flex",
+    scrollSnapType: "x mandatory",
+    overflowX: "scroll",
+  },
+}));
 
 export default function Projects() {
   const [projectsData, setProjectsData] = React.useState(null);
@@ -30,8 +41,10 @@ export default function Projects() {
 
   console.log(projectsData);
 
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.projectsWrapper}>
       {projectsData?.map((project, idx) => (
         <ProjectItem
           key={idx}

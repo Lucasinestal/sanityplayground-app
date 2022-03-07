@@ -1,21 +1,23 @@
 import React from "react";
 import Thumbnail from "../components/thumbnail";
 import ProjectTag from "../components/projectTag";
-import Button from "../components/button";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
-import sanityClient from "../client";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    padding: "10px",
+    borderRadius: 0,
+    minWidth: "100%",
+    scrollSnapAlign: "start",
+  },
+  projectItemTitle: {
+    padding: 10,
   },
 }));
 
 export default function ProjectItem(props) {
   const classes = useStyles();
-
 
   console.log(props);
   const { technologies, image, url, title } = props;
@@ -25,7 +27,7 @@ export default function ProjectItem(props) {
       {technologies.map((technology, idx) => (
         <ProjectTag key={idx} technology={technology} />
       ))}
-      <Typography>{title}</Typography>
+      <Typography className={classes.projectItemTitle}>{title}</Typography>
     </Card>
   );
 }

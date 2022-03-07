@@ -7,8 +7,14 @@ import Header from "./containers/header/index";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
-  pageWrapper: {
-    margin: "7vh 24px",
+  wrapper: {
+    marginTop: "60px",
+    margin: "auto",
+  },
+
+  linkItem: {
+    margin: "5px 10px",
+    color: "white",
   },
 }));
 
@@ -17,7 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <div className={classes.pageWrapper}>
+      <div className={classes.wrapper}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
